@@ -1,0 +1,106 @@
+fileFormatVersion: 2
+guid: 4aff208aa68bb4cc9aea477b5528bd96
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Chip
+    100004: ChipLock
+    100006: Door
+    100008: Floor
+    100010: Goal
+    100012: Help
+    100014: Hero
+    100016: Key
+    100018: Walls
+    400000: //RootNode
+    400002: Chip
+    400004: ChipLock
+    400006: Door
+    400008: Floor
+    400010: Goal
+    400012: Help
+    400014: Hero
+    400016: Key
+    400018: Walls
+    2300000: Chip
+    2300002: ChipLock
+    2300004: Door
+    2300006: Floor
+    2300008: Goal
+    2300010: Help
+    2300012: Hero
+    2300014: Key
+    2300016: Walls
+    3300000: Chip
+    3300002: ChipLock
+    3300004: Door
+    3300006: Floor
+    3300008: Goal
+    3300010: Help
+    3300012: Hero
+    3300014: Key
+    3300016: Walls
+    4300000: Hero
+    4300002: Help
+    4300004: ChipLock
+    4300006: Goal
+    4300008: Chip
+    4300010: Door
+    4300012: Walls
+    4300014: Key
+    4300016: Floor
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 0
+  userData: 
