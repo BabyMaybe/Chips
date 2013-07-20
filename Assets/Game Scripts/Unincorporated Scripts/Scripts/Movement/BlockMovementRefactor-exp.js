@@ -7,15 +7,13 @@ var right : String = "e";
 
 var hitSound : AudioClip;
 
-var timer : GameObject;
-internal var timerScript : Timer;
+
 
 var canMove : boolean = true;
 
 function Start () {
 
-	timerScript = timer.GetComponent(Timer);
-
+	
 }
 
 function Update () {

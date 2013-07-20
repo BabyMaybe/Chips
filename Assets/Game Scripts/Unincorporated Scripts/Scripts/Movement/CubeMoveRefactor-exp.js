@@ -6,17 +6,10 @@ var left : String = "a";
 var right : String = "e";
 var hit : RaycastHit;
 
-var canMove : boolean = true;
-
-function Start () {
-
-
-}
 
 function Update () {
 	
 	GetDirection();
-	
 
 }
 
@@ -47,7 +40,7 @@ function GetDirection () {
 
 // X //if movement raise warning
 	  
-	if (canMove && Input.anyKeyDown) {
+	if (Input.anyKeyDown) {
 			
 		if (Input.inputString == up) {
 			//print("going up!");
