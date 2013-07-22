@@ -10,7 +10,7 @@ function Unlock () {
 	inventoryController = inventory.GetComponent(InventoryController);
 
 	if (inventoryController.keyStorage[color] > 0) {
-		print("U");
+		//print("key available");
 		
 		audio.PlayOneShot(unlockSound);
 		
