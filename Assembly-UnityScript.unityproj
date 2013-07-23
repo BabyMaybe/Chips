@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Currently Unused scripts\FloorDraw.js" />
-     <Compile Include="Assets\Scripts\Defunct Scripts\BlockMovementRefactor.js" />
      <Compile Include="Assets\Scripts\Entity Scirpts\Actions.js" />
      <Compile Include="Assets\Scripts\Entity Scirpts\HeroActions.js" />
      <Compile Include="Assets\Scripts\Item Scripts\ChipHandler.js" />
@@ -60,6 +59,7 @@
      <Compile Include="Assets\Scripts\Tile Scripts\DoorHandler.js" />
      <Compile Include="Assets\Scripts\Tile Scripts\GoalHandler.js" />
      <Compile Include="Assets\Scripts\Tile Scripts\HelpHandler.js" />
+     <Compile Include="Assets\Scripts\Unincorporated Scripts\Scripts\BugActions.js" />
      <Compile Include="Assets\Scripts\Unincorporated Scripts\Scripts\Chip Items\Conveyer.js" />
      <Compile Include="Assets\Scripts\Unincorporated Scripts\Scripts\Chip Items\Dirt.js" />
      <Compile Include="Assets\Scripts\Unincorporated Scripts\Scripts\Chip Items\DirtReRefactor.js" />

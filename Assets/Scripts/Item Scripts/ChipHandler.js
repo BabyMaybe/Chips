@@ -23,5 +23,6 @@ function OnTriggerEnter (other : Collider) {
 	audio.PlayOneShot(chipGetSound);
 
 	Destroy(gameObject,1);
+
 }
 

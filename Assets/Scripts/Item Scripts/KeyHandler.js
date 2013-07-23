@@ -1,20 +1,27 @@
 #pragma strict
 
-var color : KeyColor; 
-var inventory : GameObject;
-var keyGetAnimation : AnimationClip;
-var keyGetSound : AudioClip;
+internal var inventory : InventoryController;
+
+var color              : KeyColor;
+var keyGetAnimation    : AnimationClip;
+var keyGetSound        : AudioClip;
+
+
+function Start() {
+
+	inventory = GameObject.Find("Inventory").GetComponent(InventoryController);
+
+}
 
 function OnTriggerEnter(other : Collider) {
 
 	collider.enabled = false;
 	
-	inventory.SendMessage("AddKey",color,SendMessageOptions.DontRequireReceiver);
+	inventory.AddKey(color);
 	
 	animation.Play(keyGetAnimation.name);
 	audio.PlayOneShot(keyGetSound);
-	
-	yield WaitForSeconds(1);
-	Destroy(gameObject);
+
+	Destroy(gameObject,1);
 	
 }
