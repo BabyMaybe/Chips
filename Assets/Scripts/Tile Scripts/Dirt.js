@@ -43,8 +43,6 @@ function Move() {
 	
 	if (Physics.Raycast(ray, hit, 2)) {
 	
-		print(hit.transform.name);
-	
 		if (hit.transform.name == "Water") {
 			
 			Destroy(hit.transform.gameObject);

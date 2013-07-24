@@ -2,18 +2,34 @@
 
 var skin : GUISkin;
 
+var level : int;
+var chipsNeeded : int;
+var timeToComplete : int;
+
+
+internal var chipsRemaining : int;
+
 internal var restarting : boolean = false;
 internal var advancing  : boolean = false;
 
 internal var hero  : HeroActions;
 internal var timer : Timer;
-
+ var inventory : InventoryController;
 
 
 function Start () {
 
+	chipsRemaining = chipsNeeded;
+
 	hero = GameObject.Find("Hero").GetComponent(HeroActions);
 	timer = GameObject.Find("Timer").GetComponent(Timer);
+	inventory = GameObject.Find("Inventory").GetComponent(InventoryController);
+}
+
+
+function Update () {
+	var chipsHeld : int = inventory.GetChips();
+	chipsRemaining = chipsNeeded - chipsHeld;
 
 }
 
@@ -59,5 +75,29 @@ function OnGUI() {
 	if (advancing) {
 		GUI.Window(0,windowRect,NextLevel,"My Window");
 	}
+
+}
+
+function GetChipsNeeded() {
+
+	return chipsNeeded;
+
+}
+
+function GetChipsRemaining() {
+
+	return chipsRemaining;
+
+}
+
+function GetLevel() {
+
+	return level;
+
+}
+
+function GetTimeToComplete() {
+
+	return timeToComplete;
 
 }

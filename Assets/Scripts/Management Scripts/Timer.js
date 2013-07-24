@@ -3,7 +3,7 @@
 
 internal var running : boolean = false;
 
-internal var timeRemaining : float = 101.0;
+internal var timeRemaining : float;
 internal var timeDisplay : int;
 
 internal var gm : GameManager;
@@ -12,6 +12,8 @@ internal var gm : GameManager;
 function Start () {
 
 	gm = GameObject.Find("Melinda").GetComponent(GameManager);
+
+	timeRemaining = gm.GetTimeToComplete() + 1;
 
 	StartTimer();
 
@@ -41,5 +43,11 @@ function StartTimer() {
 function StopTimer() {
 	
 	running = false;
+
+}
+
+function GetTimeDisplay() {
+
+	return timeDisplay.ToString();
 
 }

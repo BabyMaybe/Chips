@@ -79,7 +79,6 @@ function UpdateCurrentBlock() {
 	if (Physics.Raycast(ray,hit,2)) {
 	
     	currentBlock = hit.collider.name;
-        print(currentBlock);
 
     }
 	
@@ -202,8 +201,9 @@ function CheckAhead() {
 
 function Kill() {
 	//Destroys current object
-	
-	Destroy(gameObject);
+	DisallowMove();
+	Hide();
+	Destroy(gameObject,5);
 	
 }
 

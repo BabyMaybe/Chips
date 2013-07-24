@@ -13,7 +13,7 @@ function Start() {
 }
 
 function OnTriggerEnter(other : Collider) {
-	print("entered goal");
+
 	audio.PlayOneShot(winSound);
 	
 	timer.StopTimer();

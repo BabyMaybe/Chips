@@ -7,13 +7,12 @@ function Start () {
 }
 
 function Update () {
+
 }
 
 function Fire() {
 	//Enter code to deal with Fire here
 	//Bugs treat Fire as a wall.
-
-
 
 }
 
@@ -26,25 +25,20 @@ function Water() {
 function Conveyer() {
 	//Enter code to deal with Conveyer Floors here
 
-
-
 }
 
 function Ice() {
 	//Enter code to deal with Ice here
-
 
 }
 
 function IceCorner() {
 	//Enter code to deal with Ice Corners here
 
-
 }
 
 function Monster() {
 	//Enter code to deal with Monsters here
-
 
 }
 
@@ -71,39 +65,6 @@ function UpdateDirection () {
 		transform.Rotate(Vector3.up * 90);
 
 	}
-//
-//	if (CheckAhead()) {
-//
-//		transform.Rotate(Vector3.up * -90);
-//		currentDirection = parseInt(transform.eulerAngles.y);
-//		AllowMove();
-//		return;
-//
-//	}
-//	else if (!Physics.Raycast (pos,forward,2)) {
-//
-//		AllowMove();
-//		return;
-//
-//	} else if (!Physics.Raycast (pos,right,2)) {
-//
-//		transform.Rotate(Vector3.up * 90);
-//		currentDirection = parseInt(transform.eulerAngles.y);
-//		AllowMove();
-//		return;
-//
-//	} else if (!Physics.Raycast (pos,back,2)) {
-//
-//		transform.Rotate(Vector3.up * 180);
-//		currentDirection = parseInt(transform.eulerAngles.y);
-//		AllowMove();
-//		return;
-//
-//	} else {
-//
-//		DisallowMove();
-//
-//	}
 
 }
 
@@ -131,18 +92,13 @@ function CheckAhead() {
 		if (hit.collider.name != "Hero" && hit.collider.name != "Water") {
 
 			return false;
-
 		}
-
 	}
 
-		return true;
-
-
+	return true;
 }
 
 function OnTriggerEnter(other : Collider) {
-	print("triggered by " + other.name);
 
 	var actions :  Actions = other.GetComponent(Actions);
 
@@ -153,5 +109,6 @@ function OnTriggerEnter(other : Collider) {
 	}
 	
 }
+
 //End of class definition
 }

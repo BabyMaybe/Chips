@@ -1,8 +1,7 @@
 #pragma strict
 
-var inventory : GameObject;
-private var inventoryController : InventoryController;
- 
+
+
 var  levelX : int = 695;
 var  levelY : int = 85;
 
@@ -12,18 +11,19 @@ var  timeY : int = 205;
 var  chipsX : int = 695;
 var  chipsY : int = 371;
 
+internal var level : int;
 
-
-var timer : GameObject;
-private var timerScript : Timer; 
+internal var timer : Timer;
+internal var gm : GameManager;
 
 var mySkin : GUISkin;
 	
 function Start() {
 	
-	inventoryController = inventory.GetComponent(InventoryController);
-	timerScript = timer.GetComponent(Timer);
-	
+	gm = GameObject.Find("Melinda").GetComponent(GameManager);
+	timer = GameObject.Find("Timer").GetComponent(Timer);
+
+	level = gm.GetLevel();
 }
 
 function Update() {
@@ -35,12 +35,11 @@ function Update() {
 function OnGUI() {
 
 	GUI.skin = mySkin;
+	var	time : String = timer.GetTimeDisplay();
+	var chips : int = gm.GetChipsRemaining();
 	
-	//GUI.Box(Rect(levelX,levelY,100,100), "Level:");
-	GUI.Label(Rect(levelX,levelY,100,100),"1");
-	//GUI.Box(Rect(timeX,timeY,100,100), "Time:");
-	GUI.Label(Rect(timeX,timeY,100,100),timerScript.timeDisplay.ToString());
-	//GUI.Box(Rect(chipsX,chipsY,100,100), "Chips:");
-	GUI.Label(Rect(chipsX,chipsY,100,100), inventoryController.chipsRemaining.ToString());
+	GUI.Label(Rect(levelX,levelY,100,100),level.ToString());
+	GUI.Label(Rect(timeX,timeY,100,100),time);
+	GUI.Label(Rect(chipsX,chipsY,100,100), chips.ToString());
 	
 }

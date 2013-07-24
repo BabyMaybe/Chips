@@ -1,17 +1,24 @@
 #pragma strict
 
-internal var inventory : InventoryController;
 
-var chipsNeeded : int = 11;
+
+var chipsNeeded : int;
 var chipUnlockSound : AudioClip;
+
+internal var gm : GameManager;
+internal var inventory : InventoryController;
 
 function Start() {
 
+	gm = GameObject.Find("Melinda").GetComponent(GameManager);
 	inventory = GameObject.Find("Inventory").GetComponent(InventoryController);
 
+	chipsNeeded = gm.GetChipsNeeded();
 }
 
 function Activate () {
+
+	var currentChips : int = inventory.GetChips();
 
 	if (inventory.chipCount >= chipsNeeded) {
 		
