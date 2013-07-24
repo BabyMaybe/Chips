@@ -44,6 +44,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
      <Compile Include="Assets\Game Scripts\BlockMovement.js" />
      <Compile Include="Assets\Game Scripts\BlockMovementRefactor.js" />
      <Compile Include="Assets\Game Scripts\ChipHandler.js" />
@@ -58,6 +59,32 @@
      <Compile Include="Assets\Game Scripts\KeyHandler.js" />
      <Compile Include="Assets\Game Scripts\KeyIconHandler.js" />
      <Compile Include="Assets\Game Scripts\Timer.js" />
+=======
+     <Compile Include="Assets\Scripts\Currently Unused scripts\FloorDraw.js" />
+     <Compile Include="Assets\Scripts\Entity Scirpts\Actions.js" />
+     <Compile Include="Assets\Scripts\Entity Scirpts\HeroActions.js" />
+     <Compile Include="Assets\Scripts\Item Scripts\ChipHandler.js" />
+     <Compile Include="Assets\Scripts\Item Scripts\KeyHandler.js" />
+     <Compile Include="Assets\Scripts\Item Scripts\KeyIconHandler.js" />
+     <Compile Include="Assets\Scripts\Management Scripts\CameraMovement.js" />
+     <Compile Include="Assets\Scripts\Management Scripts\ChipLockHandler.js" />
+     <Compile Include="Assets\Scripts\Management Scripts\DoorHandler.js" />
+     <Compile Include="Assets\Scripts\Management Scripts\GUIHandler.js" />
+     <Compile Include="Assets\Scripts\Management Scripts\GameManager.js" />
+     <Compile Include="Assets\Scripts\Management Scripts\GoalHandler.js" />
+     <Compile Include="Assets\Scripts\Management Scripts\HelpHandler.js" />
+     <Compile Include="Assets\Scripts\Management Scripts\InventoryController.js" />
+     <Compile Include="Assets\Scripts\Management Scripts\Timer.js" />
+     <Compile Include="Assets\Scripts\Tile Scripts\Dirt.js" />
+     <Compile Include="Assets\Scripts\Tile Scripts\Water.js" />
+     <Compile Include="Assets\Scripts\Unincorporated Scripts\Scripts\BugActions.js" />
+     <Compile Include="Assets\Scripts\Unincorporated Scripts\Scripts\Chip Items\Conveyer.js" />
+     <Compile Include="Assets\Scripts\Unincorporated Scripts\Scripts\Chip Items\Fire.js" />
+     <Compile Include="Assets\Scripts\Unincorporated Scripts\Scripts\Chip Items\Ice.js" />
+     <Compile Include="Assets\Scripts\Unincorporated Scripts\Scripts\Chip Items\IceCorner.js" />
+     <Compile Include="Assets\Scripts\Unincorporated Scripts\Scripts\Chip Items\IceCornerL.js" />
+     <Compile Include="Assets\Scripts\Unincorporated Scripts\Scripts\Chip Items\IceCornerR.js" />
+>>>>>>> Refactor
  <Reference Include="Library\ScriptAssemblies\Assembly-UnityScript-firstpass">
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
