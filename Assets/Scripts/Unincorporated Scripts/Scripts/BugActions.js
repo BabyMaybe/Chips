@@ -169,5 +169,11 @@ function BugMove() {
 
 }
 
+
+function OnTriggerEnter(other : Collider) {
+
+	other.GetComponent(Actions).Monster();
+	
+}
 //End of class definition
 }

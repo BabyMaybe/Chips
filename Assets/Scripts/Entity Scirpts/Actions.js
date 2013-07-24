@@ -184,8 +184,7 @@ function CheckAhead() {
 
 		hit.transform.gameObject.SendMessage("Activate",SendMessageOptions.DontRequireReceiver);
 		Physics.Raycast(ray,hit,2);
-		print(hit);
-
+		
 		//either change the method for detecting immovable objects or further exand tagging system
 		//i dont like this solution right now...
 

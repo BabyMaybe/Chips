@@ -11,13 +11,14 @@ var hitSound : AudioClip;
 
 function Fire() {
 	//How Chip deals with Fire
-
+	print("Chip killed in a firey death!");
 	Kill();
 
 }
 
 function Water() {
 	//How Chip deals with Water
+	print("Chip drowns in a watery grave!");
 
 	Kill();
 
@@ -46,6 +47,7 @@ function IceCorner() {
 
 function Monster () {
 	//How Chip deals with Monsters
+	print("Chip eaten by monsters!");
 	Kill();
 }
 

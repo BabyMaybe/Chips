@@ -1,12 +1,7 @@
 #pragma strict
 
 function OnTriggerEnter(other : Collider) {
-	
-	//if block turn into dirt
-	//if chip water 
-	
-		
 
-	//actions.water()	
-
+	other.GetComponent(Actions).Water();
+	
 }
