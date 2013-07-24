@@ -1,12 +1,15 @@
 #pragma strict
 var beacon : GameObject;
-var destroyable : boolean;
+var destroyable : boolean = false;
+var hero : GameObject;
 
 function Start () {
 
+	hero = GameObject.Find("Hero");
+
 }
 
-function Update () {
+	function Update () {
 
 }
 
@@ -14,7 +17,7 @@ function Activate () {
 	
 	if (destroyable) {
 		transform.Translate(0,-100,0);
-		Destroy(gameObject);
+		Destroy(gameObject,1);
 	} else {
 		//find currentDirection of hero
 		AlignWithHero();
@@ -27,21 +30,9 @@ function Activate () {
 
 function AlignWithHero () {
 
-	for (var i : int = 0; i < 8; i++) {
-		
-		var ray : Ray = new Ray (transform.position,transform.TransformDirection (Vector3.back));
-		var hit : RaycastHit;
-		
-		if (Physics.Raycast(ray, hit, 1) && hit.transform.name == "Hero") {
-			
-			transform.Rotate(Vector3.zero);
-			break;
-			
-				}
-				
-		transform.Rotate(Vector3.up * 90,Space.World);
-
-		}
+	var alignment : int;
+	alignment = hero.GetComponent(Actions).currentDirection;
+	transform.eulerAngles.y = alignment;
 
 }
 
@@ -50,7 +41,7 @@ function Move() {
 	var ray : Ray = new Ray (transform.position, transform.TransformDirection (Vector3.forward));
 	var hit : RaycastHit;
 	
-	if (Physics.Raycast(ray, hit, 1)) {
+	if (Physics.Raycast(ray, hit, 2)) {
 	
 		print(hit.transform.name);
 	
@@ -58,7 +49,7 @@ function Move() {
 			
 			Destroy(hit.transform.gameObject);
 			renderer.material.color = Color(0,0,0);
-			transform.Translate(Vector3.forward);
+			transform.Translate(Vector3.forward*2);
 			
 			destroyable = true;
 		
@@ -67,6 +58,6 @@ function Move() {
 		
 	}
 	
-	transform.Translate(Vector3.forward);
+	transform.Translate(Vector3.forward*2);
 
 }

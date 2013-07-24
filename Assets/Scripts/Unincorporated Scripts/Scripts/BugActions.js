@@ -11,8 +11,9 @@ function Update () {
 
 function Fire() {
 	//Enter code to deal with Fire here
+	//Bugs treat Fire as a wall.
 
-	Kill();
+
 
 }
 
@@ -60,105 +61,53 @@ function Move() {
 
 }
 
-function UpdateCurrentBlock() {
-	//Detects the name of the first block found up to one block beneath gameObject
-
-	var ray : Ray = new Ray (transform.position,transform.TransformDirection(Vector3.down));
-	var hit : RaycastHit;
-	
-	if (Physics.Raycast(ray,hit,2)) {
-	
-    	currentBlock = hit.collider.name;
-        print(currentBlock);
-
-    }
-	
-}
-
-function UpdateRestrictions() {
-	
-	switch (currentBlock) {
-		
-		case "Water":
-			canMove = false;
-			break;
-
-		case "Fire":
-			canMove = false;
-			break;
-
-		case "Ice":
-			canMove = false;
-			break;
-
-		case "Ice Corner":
-			canMove = false;
-			break;
-			
-		case "Conveyer":
-		//need to update this to canMovePerpendicular somehow
-			canMove = false;
-			break;
-			
-		case "Floor":
-			canMove = true;
-			break;
-			
-		default:
-			canMove = true;
-			break;
-			
-		}
-
-}
-
 function UpdateDirection () {
 
-	var pos : Vector3 = transform.position;
+	transform.Rotate(Vector3.up * -90);
 
-	var left : Vector3 = transform.TransformDirection (Vector3.left);
-	var forward : Vector3 = transform.TransformDirection (Vector3.forward);
-	var right : Vector3 = transform.TransformDirection (Vector3.right);
-	var back : Vector3 = transform.TransformDirection (Vector3.back);
-
-	if (!Physics.Raycast (pos,left,2)) {
-
-		transform.Rotate(Vector3.up * -90);
-		currentDirection = parseInt(transform.eulerAngles.y);
-		AllowMove();
-		return;
-
-	}
-	else if (!Physics.Raycast (pos,forward,2)) {
-
-		AllowMove();
-		return;
-
-	} else if (!Physics.Raycast (pos,right,2)) {
+	while (!CheckAhead()) {
+	//FIX THIS!!! INFINITE LOOP POSSIBLE!!!!
 
 		transform.Rotate(Vector3.up * 90);
-		currentDirection = parseInt(transform.eulerAngles.y);
-		AllowMove();
-		return;
-
-	} else if (!Physics.Raycast (pos,back,2)) {
-
-		transform.Rotate(Vector3.up * 180);
-		currentDirection = parseInt(transform.eulerAngles.y);
-		AllowMove();
-		return;
-
-	} else {
-
-		DisallowMove();
 
 	}
+//
+//	if (CheckAhead()) {
+//
+//		transform.Rotate(Vector3.up * -90);
+//		currentDirection = parseInt(transform.eulerAngles.y);
+//		AllowMove();
+//		return;
+//
+//	}
+//	else if (!Physics.Raycast (pos,forward,2)) {
+//
+//		AllowMove();
+//		return;
+//
+//	} else if (!Physics.Raycast (pos,right,2)) {
+//
+//		transform.Rotate(Vector3.up * 90);
+//		currentDirection = parseInt(transform.eulerAngles.y);
+//		AllowMove();
+//		return;
+//
+//	} else if (!Physics.Raycast (pos,back,2)) {
+//
+//		transform.Rotate(Vector3.up * 180);
+//		currentDirection = parseInt(transform.eulerAngles.y);
+//		AllowMove();
+//		return;
+//
+//	} else {
+//
+//		DisallowMove();
+//
+//	}
 
 }
 
 function BugMove() {
-
-
 
 	UpdateCurrentBlock();
 	UpdateRestrictions();
@@ -169,10 +118,39 @@ function BugMove() {
 
 }
 
+function CheckAhead() {
+	//Sends a ray one block in front of gameObject
+	//If Block is detected and it is not Hero or Water it returns false
+	//If Block is Hero or Water or No Block is present returns true;
+
+	var ray : Ray = new Ray (transform.position,transform.TransformDirection (Vector3.forward));
+	var hit : RaycastHit;
+
+	if (Physics.Raycast(ray,hit,2)) {
+
+		if (hit.collider.name != "Hero" && hit.collider.name != "Water") {
+
+			return false;
+
+		}
+
+	}
+
+		return true;
+
+
+}
 
 function OnTriggerEnter(other : Collider) {
+	print("triggered by " + other.name);
 
-	other.GetComponent(Actions).Monster();
+	var actions :  Actions = other.GetComponent(Actions);
+
+	if (actions != null) {
+
+		actions.Monster();
+
+	}
 	
 }
 //End of class definition

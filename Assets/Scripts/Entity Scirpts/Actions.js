@@ -70,27 +70,6 @@ function AllowMove() {
 	
 }
 
-function Move() {
-	//Moves object forward one block
-	
-	if (canMove) {
-		transform.Translate(Vector3.forward * 2);
-	}
-	
-}
-
-function KeyMove(dir : Facing) {
-	//Movement induced by key press
-
-	transform.eulerAngles.y = parseInt(dir);
-	currentDirection = dir;
-	
-	Invoke("CheckAhead", .1);
-	Invoke("Move", .1);
-	
-
-}
-
 function UpdateCurrentBlock() {
 	//Detects the name of the first block found up to one block beneath gameObject
 
@@ -139,7 +118,7 @@ function UpdateRestrictions() {
 			canMove = true;
 			break;
 			
-		}
+	}
 	
 }
 
@@ -171,6 +150,26 @@ function UpdateDirection () {
     
 }
 
+function Move() {
+	//Moves object forward one block
+	
+	if (canMove) {
+		transform.Translate(Vector3.forward * 2);
+	}
+	
+}
+
+function KeyMove(dir : Facing) {
+	//Movement induced by key press
+
+	transform.eulerAngles.y = parseInt(dir);
+	currentDirection = dir;
+	
+	Invoke("CheckAhead", .1);
+	Invoke("Move", .1);
+	
+
+}
 
 function CheckAhead() {
 	//Sends a ray one block in front of gameObject
@@ -184,18 +183,19 @@ function CheckAhead() {
 
 		hit.transform.gameObject.SendMessage("Activate",SendMessageOptions.DontRequireReceiver);
 		Physics.Raycast(ray,hit,2);
-		
+
 		//either change the method for detecting immovable objects or further exand tagging system
 		//i dont like this solution right now...
 
 		if (hit.collider != null && hit.collider.tag == "Impassible") {
 
 			DisallowMove();
-			return;
+			return false;
 		}
 	}
 
 	AllowMove();
+	return true;
 	
 }
 
