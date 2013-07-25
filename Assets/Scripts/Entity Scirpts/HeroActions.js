@@ -47,7 +47,7 @@ function IceCorner() {
 
 function Monster () {
 	//How Chip deals with Monsters
-	print("Chip eaten by monsters!");
+	print("Chip devoured by monsters!");
 	Kill();
 }
 

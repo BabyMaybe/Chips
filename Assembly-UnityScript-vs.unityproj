@@ -44,22 +44,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-     <Compile Include="Assets\Game Scripts\BlockMovement.js" />
-     <Compile Include="Assets\Game Scripts\BlockMovementRefactor.js" />
-     <Compile Include="Assets\Game Scripts\ChipHandler.js" />
-     <Compile Include="Assets\Game Scripts\ChipLockHandler.js" />
-     <Compile Include="Assets\Game Scripts\CubeMoveRefactor.js" />
-     <Compile Include="Assets\Game Scripts\DoorHandler.js" />
-     <Compile Include="Assets\Game Scripts\FloorDraw.js" />
-     <Compile Include="Assets\Game Scripts\GUIHandler.js" />
-     <Compile Include="Assets\Game Scripts\GoalHandler.js" />
-     <Compile Include="Assets\Game Scripts\HelpHandler.js" />
-     <Compile Include="Assets\Game Scripts\InventoryController.js" />
-     <Compile Include="Assets\Game Scripts\KeyHandler.js" />
-     <Compile Include="Assets\Game Scripts\KeyIconHandler.js" />
-     <Compile Include="Assets\Game Scripts\Timer.js" />
-=======
      <Compile Include="Assets\Scripts\Currently Unused scripts\FloorDraw.js" />
      <Compile Include="Assets\Scripts\Entity Scirpts\Actions.js" />
      <Compile Include="Assets\Scripts\Entity Scirpts\HeroActions.js" />
@@ -84,7 +68,6 @@
      <Compile Include="Assets\Scripts\Unincorporated Scripts\Scripts\Chip Items\IceCorner.js" />
      <Compile Include="Assets\Scripts\Unincorporated Scripts\Scripts\Chip Items\IceCornerL.js" />
      <Compile Include="Assets\Scripts\Unincorporated Scripts\Scripts\Chip Items\IceCornerR.js" />
->>>>>>> Refactor
  <Reference Include="Library\ScriptAssemblies\Assembly-UnityScript-firstpass">
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
